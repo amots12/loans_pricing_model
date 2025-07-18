@@ -1,0 +1,3 @@
+Loan_ID,Principal,Interest_Rate,Term,Origination_Date,Seasoning,Credit_Rating,Product_Type,Servicing_Fee
+LN1001,15000,0.0699,60,2022-01-01,12,B,PV,0.0025
+LN1002,10000,0.0799,48,2022-06-01,6,C,EHP,0.003
