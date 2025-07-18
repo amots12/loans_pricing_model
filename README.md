@@ -1,53 +1,47 @@
 # Loan Pricing Module
 
-A Python module for pricing performing loan portfolios using discounted cash flow (DCF) methods. This model is tailored for asset buyers or analysts evaluating loans with varying borrower rates, credit scores, tenors, and servicing costs.
+This project implements a Python-based calculator for pricing performing loan portfolios using a DCF model.
 
----
+## Features
+- Supports multiple amortization types:
+  - `Level_Payment_Loan`: Fixed monthly annuity (interest + principal)
+  - `Equal_Principal_Loan`: Fixed principal with declining interest
+- Accounts for customer interest rate, credit score, tenor, servicing fee
+- Discounts net cash flows using investor's discount rate
+- Configurable via YAML
 
-## 🔧 Features
+## Inputs
+- `inputs/loan_tape.csv`: Loan-level data with fields:
+  - Loan_ID
+  - Principal
+  - Interest_Rate
+  - Term
+  - Origination_Date
+  - Seasoning
+  - Credit_Rating
+  - Product_Type (`Level_Payment_Loan` or `Equal_Principal_Loan`)
+  - Servicing_Fee
+- `inputs/config.yaml`: Global assumptions like:
+  ```yaml
+  discount_rate: 0.045
+  cpr_monthly: 0.02
+  monthly_loss_rate: 0.000083
+  servicing_fee: 0.0025
+  ```
 
-- Supports multiple loan products (e.g., `PV`, `EHP`) via class inheritance
-- Calculates monthly cash flow waterfalls per loan
-- Applies credit losses, prepayments, and servicing fees
-- Discounts net cash flows using investor’s required return
-- Outputs loan-level purchase prices with metadata
+## Outputs
+- `outputs/priced_loans.csv`: Loan-level results with calculated price
 
----
+## Run Example
+```bash
+python main.py --tape inputs/loan_tape.csv --config inputs/config.yaml --output outputs/priced_loans.csv
+```
 
-## 🧩 5D Pricing Framework
+## Requirements
+Install dependencies with:
+```bash
+pip install -r requirements.txt
+```
 
-The model supports pricing points across **five dimensions**:
-
-1. **Product Type**: Loan structure (e.g., amortization style)
-2. **Customer Interest Rate**: Nominal rate paid by borrower
-3. **Credit Score**: Risk segment for default assumptions
-4. **Tenor**: Loan term in months
-5. **Servicing Fee**: Fee charged for managing the loan
-
-Each loan is priced by simulating its cash flows and applying these assumptions dynamically.
-
----
-
-## 🧾 Required Inputs
-
-### 📄 Loan Tape (as DataFrame or CSV)
-Each row represents one loan with the following fields:
-
-- `Loan_ID`
-- `Principal`
-- `Interest_Rate`
-- `Term`
-- `Origination_Date`
-- `Seasoning`
-- `Credit_Rating`
-- `Product_Type`
-- `Servicing_Fee` (optional)
-
-### ⚙️ Assumptions (Python dictionary or config file)
-```python
-assumptions = {
-    'discount_rate': 0.045,
-    'cpr_monthly': 0.02,
-    'monthly_loss_rate': 0.000083,
-    'servicing_fee': 0.0025  # default if not set per loan
-}
+## License
+This project is licensed under the MIT License.

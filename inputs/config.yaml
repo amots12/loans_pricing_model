@@ -1,0 +1,4 @@
+cpr_monthly: 0.02
+discount_rate: 0.045
+monthly_loss_rate: 8.3e-05
+servicing_fee: 0.0025
