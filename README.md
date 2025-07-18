@@ -3,7 +3,7 @@
 This project implements a Python-based calculator for pricing performing loan portfolios using a DCF model.
 
 ## Features
-- Supports multiple product types (PV, EHP)
+- Supports multiple product types (Auto, Bike)
 - Accounts for customer interest rate, credit score, tenor, servicing fee
 - Discounts net cash flows using investor rate
 - YAML-configurable assumptions
