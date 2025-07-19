@@ -1,0 +1,3 @@
+Loan_ID,Product_Type,Customer_Rate,Credit_Score,Tenor,Servicing_Fee,Price
+LN1001,PV,0.0699,B,60,0.0025,15708.45
+LN1002,EHP,0.0799,C,48,0.003,10560.29

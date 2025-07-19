@@ -1,3 +1,8 @@
 Loan_ID,Principal,Interest_Rate,Term,Origination_Date,Seasoning,Credit_Rating,Product_Type,Servicing_Fee
+<<<<<<< HEAD
 LN1001,15000,0.0699,60,2022-01-01,12,B,PV,0.0025
 LN1002,10000,0.0799,48,2022-06-01,6,C,EHP,0.003
+=======
+LN1001,15000,0.0699,60,2022-01-01,12,B,Level_Payment_Loan,0.0025
+LN1002,10000,0.0799,48,2022-06-01,6,C,Equal_Principal_Loan,0.003
+>>>>>>> dc8932e (Refactored project: descriptive product types, updated README and license)
