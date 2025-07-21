@@ -2,3 +2,5 @@ discount_rate: 0.045
 cpr_monthly: 0.02
 servicing_fee: 0.0025
 lgd: 0.45
+start_fee: 0.0025
+max_fee: 0.10
